@@ -1,0 +1,22 @@
+
+
+
+
+<mid class="shopmenu"   >
+
+  
+    <div ng-repeat="product in products"> 
+
+		<div><img width="200px;" height="200px;" src="{{product.image}}"> </div>
+		<div> {{product.name}} </div>	
+
+        <div> {{product.price}} </div>
+        <button class="myButton1" ng-click="setProductName(product)" onclick="window.location.href = '#/info';">Info
+        </button> 
+        <button class="myButton1"  ng-click="addOne(); saveBuyProduct(product)"> Buy  </button> 
+         <button  class="myButton1" class="button" onclick="window.location.href = '#/list';">List</button> 
+
+</div>
+
+
+</mid>

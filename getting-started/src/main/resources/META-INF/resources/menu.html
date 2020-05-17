@@ -1,0 +1,18 @@
+<mid class="shopmenu"  ng-controller="productController" >
+    <div ng-repeat="product in products"> 
+
+        <div> {{product.name}} </div>	 
+
+        <div> <img width="200px;" src="{{product.image}}"> </div>
+
+        <div> {{product.price}} </div>
+
+        <div>   <button onclick="window.location.href = '#/info';">Info
+
+        </button> 
+
+
+        </div>
+
+        <div> <button> Buy  </button> </div>	
+    </div>

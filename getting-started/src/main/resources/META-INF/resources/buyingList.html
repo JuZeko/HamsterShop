@@ -1,0 +1,26 @@
+
+
+
+	 <div ng-controller="listOfProducts"  >
+	
+		<div ng-repeat="list in listProducts track by $index" class="products"> 
+
+<div><img width="200px;" src="{{list.image}}"> 
+	
+	
+
+ 		<table style=" border:2px solid red; border-radius: 5px"  style="align-items: center;"> 
+		<td    style=" border:2px solid blue; border-radius: 5px"> <p>Name</p>  {{list.name}}</td>
+		<td    style=" border:2px solid orange; border-radius: 5px"><p>Price</p> {{list.price}} </td>
+		<td    style=" border:2px solid green; border-radius: 5px"><p>Amount</p> {{list.amount}} </td>
+		</table>
+
+   	</div>
+
+ </div>
+        </div>
+<button  style="margin-top: 10%; margin-left: 10%;" class="myButton1" class="button" onclick="window.location.href = '';">Menu</button>
+
+
+
+

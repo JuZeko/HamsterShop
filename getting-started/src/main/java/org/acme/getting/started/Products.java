@@ -16,4 +16,5 @@ public class Products {
         this.price = price;
         this.amount = amount;
     }
+    
 }

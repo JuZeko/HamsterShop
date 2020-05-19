@@ -1,0 +1,169 @@
+html{
+    background: aliceblue;
+}
+
+
+.navbar{
+height: 10vh;
+width: 100vw;
+background-color: cadetblue;
+display: grid;
+grid-template-columns:  4fr 1fr 1fr 1fr 1fr 1fr ;
+padding-top: 5vh;
+position: fixed;
+text-align: center;
+}
+
+.shopmenu{
+
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+ width: 100vw;
+ text-align: center;
+padding: 50px;
+padding-top: 15vh;
+
+}
+
+
+.shopmenu > div{
+
+width: 30%;
+padding: 10px;
+
+}
+
+
+body{
+margin: 0px;
+}
+
+
+.grid-item{
+padding-top: 10%;
+color: green;
+}
+
+
+
+.infoAboutProduct{
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 15vh;
+}
+
+.infoAboutProductImage {
+    padding: 10%;
+    text-align: center;
+    width: 30vw;
+    height: 25vw;
+    
+}
+.infoAboutProductTable{
+    text-align: center;
+    padding: 10%;
+}
+
+
+
+
+  .history{
+    
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    padding-top: 20vh;
+    text-align: center;
+    background-color: aliceblue;
+    float: none;
+    text-align: center;
+    padding-left: 20%;
+  }
+
+  .history1{
+     display: grid;
+    grid-template-columns: 4fr 2fr;
+    padding-top: 20vh;
+    text-align: center;
+    background-color: aliceblue;
+    float: none;
+    text-align: center;
+    padding-left: 20%;
+  }
+
+  .registration{
+
+    padding-top: 20vh;
+    
+    background-color: aliceblue;
+    float: none;
+    text-align: center;
+   
+
+  }
+
+.myButton {
+    box-shadow: inset 1px 0px 50px 11px #45b9ff;
+    background:linear-gradient(to bottom, #79bbff 30%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:42px;
+    border:1px solid #84bbf3;
+    display:inline-block;
+    cursor:pointer;
+    color:black;
+    font-family:Trebuchet MS;
+    font-size:18px;
+    font-weight:bold;
+    padding:8px 45px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #528ecc;
+}
+.myButton:hover {
+    background:linear-gradient(to bottom, #378de5 30%, #79bbff 100%);
+    background-color:#378de5;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+        
+
+
+
+     
+.myButton1 {
+    box-shadow: 0px 1px 0px 0px #fff6af;
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color:#ffec64;
+    border-radius:6px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffee66;
+}
+.myButton1:hover {
+    background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color:#ffab23;
+}
+.myButton1:active {
+    position:relative;
+    top:1px;
+}
+
+.products{
+    display: inline-block;
+    text-align: center;
+    padding-top: 20vh;
+    padding-right: 10%;
+    padding-left: 10%;
+    width: 10vw;
+}
+

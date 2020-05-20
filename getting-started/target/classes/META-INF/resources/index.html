@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+
+		<title>MAGAZIN</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		 <script src="backEndOfShop.js"></script> 
+	</head>
+
+
+	<body ng-app="onlineShopApp">
+
+<div ng-controller="navBar">
+
+		<nav class="navbar"  >
+
+			<div>  <button  class="myButton" class="button" onclick="window.location.href = '';">Menu</button> 
+
+
+
+			 </div>  <! Linkas i main menu->
+
+			<div><button class="myButton"  onclick="window.location.href = '#/about';">About </button>  </div>
+
+			<div> <button class="myButton" onclick="window.location.href = '#/registration';">Registration</div>
+
+			<div> <button class="myButton" onclick="window.location.href = '#/history';">History  </div>
+
+			<div > <a href="#/list" ><img width="30px;" height="30px" src="https://pic.funnygifsbox.com/uploads/2018/03/funnygifsbox.com-2018-03-01_11-32-23_356336.gif" >   </a>
+
+				<div style="font-size: 20px; color: black">  {{prekiuKiekis.counter}} Items   </div>
+
+			  </div>
+
+			 
+			
+		</nav>
+</div>
+
+
+		<middle > 
+			
+		<div ng-view></div>  <! Routingo modulis ->
+
+		</middle>
+
+	</body>
+
+</html>

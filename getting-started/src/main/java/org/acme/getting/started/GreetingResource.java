@@ -17,19 +17,26 @@ public class GreetingResource {
     private Set<Products> products = Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>()));
     private Set<Products> shopingList = Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>()));
 
+    int numberOfItems = 0;
+
+
 
     public GreetingResource() {
-        products.add(new Products("Robin Fraser",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-28-91.gif",0));
-        products.add(new Products("Albert George",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-28-67.gif",0));
-        products.add(new Products("Brodie Miller",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-29-78.gif",0));
-        products.add(new Products("Christian John",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-30-48.gif",0));
-        products.add(new Products("Troy White",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-32-44.gif",0));
-        products.add(new Products("Tristan Holland",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-33-12.gif",0));
-        products.add(new Products("Kingsley Holmes",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-33-77.gif",0));
-        products.add(new Products("Eric Hudson",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-35-60.gif",0));
-        products.add(new Products("Reggie Lawrence",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-35-88.gif",0));
-        products.add(new Products("John Honki",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-32-87.gif",0));
+        products.add(new Products("Robin Fraser",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-28-91.gif",1));
+        products.add(new Products("Albert George",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-28-67.gif",1));
+        products.add(new Products("Brodie Miller",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-29-78.gif",1));
+        products.add(new Products("Christian John",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-30-48.gif",1));
+        products.add(new Products("Troy White",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-32-44.gif",1));
+        products.add(new Products("Tristan Holland",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-33-12.gif",1));
+        products.add(new Products("Kingsley Holmes",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-33-77.gif",1));
+        products.add(new Products("Eric Hudson",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-35-60.gif",1));
+        products.add(new Products("Reggie Lawrence",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-35-88.gif",1));
+        products.add(new Products("John Honki",10,"https://pic.funnygifsbox.com/uploads/2019/06/funnygifsbox.com-2019-06-10-13-08-32-87.gif",1));
     }
+
+
+
+
 
 
 
@@ -38,6 +45,15 @@ public class GreetingResource {
     public Set<Products>loadProducts() {
         
         return products;
+    }
+
+
+    @Path("/amount")
+     @GET
+    public int loadAmounts() {
+        
+        System.out.println("Hello");
+        return numberOfItems;
     }
 
 
@@ -113,7 +129,24 @@ public class GreetingResource {
      @DELETE
     public Set<Products> DecreaseAmountOfProducts(Products product) {
 
-            System.out.println("Pasolnau");
+             shopingList.forEach((name) -> {
+
+            if(name.getName().equals(product.name)&& name.getAmount()>0)
+
+                {
+                    name.setAmount(name.getAmount() - 1);
+
+                }
+                if (name.getName().equals(product.name)&& name.getAmount()==0) {
+
+                     shopingList.remove(name);
+
+                    
+                }
+
+            });
+
+
         return shopingList;
     }
 

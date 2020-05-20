@@ -4,7 +4,7 @@
   app.value('suma', {counter:0});
   app.value('price', {sum:0});
 
-  app.service("storeProduct", function(price){
+    app.service("storeProduct", function(price){
   var products = [];
 
   
@@ -35,11 +35,13 @@
         var savedData = {}
         
         function set(data) {
+
           savedData = data;
          
         }
 
         function get() {
+         
          return savedData;
         }
 
@@ -65,8 +67,9 @@ app.config(function($routeProvider,$locationProvider) {
           return $http.get('/shopMenu')
           .then(function(response){
             return response.data;
-          })
+          })     
     }
+
     }})
       
  
@@ -96,12 +99,11 @@ app.config(function($routeProvider,$locationProvider) {
             return response.data;
           })
     }},
-
 })});
 
 // Pirmo puslapio kontroleris
 
-app.controller('productController', function($scope,$http,saveOneProductInArray,$rootScope,suma,storeProduct,data) {
+app.controller('productController', function($scope,$http,saveOneProductInArray,$rootScope,suma,data) {
 
 
   $scope.products = data;
@@ -127,14 +129,9 @@ app.controller('productController', function($scope,$http,saveOneProductInArray,
     $scope.addOne = function(){
        suma.counter +=1;
     };
-
-    $scope.saveBuyProduct = function(product) {
-    storeProduct.setProduct(product);
-   };
-
-  
-  })
-
+     
+  })                                                                                                                           
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -142,17 +139,21 @@ app.controller('productController', function($scope,$http,saveOneProductInArray,
   
   app.controller('OneProduct', function($scope,saveOneProductInArray,$rootScope,suma,storeProduct,$http) {
   
+
+
     $scope.oneProduct = saveOneProductInArray.get();
 
+    
 
- $scope.addOne = function(){
+
+    $scope.addOne = function(){
        suma.counter +=1;
-   
-    };
+      };
 
 
-$scope.addProducts1= function(product){
 
+
+      $scope.addProducts1= function(product){
       $http({
             method: "POST",
             url: '/info',
@@ -171,17 +172,22 @@ $scope.addProducts1= function(product){
     storeProduct.setProduct(oneProduct);
    };
 
+
+
+
   });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
    app.controller('navBar', function($scope,suma,$rootScope) {
-
     $scope.prekiuKiekis = suma;
-
   });
 
 
 
-   app.controller('listOfProducts', function($scope,suma,storeProduct,price,$rootScope,$http,info) {
+   app.controller('listOfProducts', function($scope,suma,price,$rootScope,$http,info) {
   
 
 
@@ -189,6 +195,22 @@ $scope.addProducts1= function(product){
 
    
 
+    $scope.pop =function(product){
+
+      
+
+       $http({
+            method: "DELETE",
+            url: '/list',
+             data: angular.toJson(product),
+              headers: {
+              'Content-Type': 'application/json'
+            }
+          }).then(_success, _error);
+
+    }
+
+ 
 
 
 

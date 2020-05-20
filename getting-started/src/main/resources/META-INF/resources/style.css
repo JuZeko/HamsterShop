@@ -14,6 +14,29 @@ position: fixed;
 text-align: center;
 }
 
+@media screen and (max-width: 800px) {
+  .shopmenu > div{
+
+width: 100% !important; 
+padding-top: 60%;
+margin-top: 50%;
+
+}
+
+
+.navbar{
+height: 40vh;
+width: 100vw;
+background-color: cadetblue;
+display: block;
+grid-template-columns:  4fr 1fr 1fr 1fr 1fr 1fr ;
+padding-top: 5vh;
+position: fixed;
+text-align: center;
+}
+}
+
+
 .shopmenu{
 
 display: flex;

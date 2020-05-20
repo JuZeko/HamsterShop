@@ -90,7 +90,7 @@ app.config(function($routeProvider,$locationProvider) {
       templateUrl: '/buyingList.html',
       controller: 'listOfProducts',
        resolve:{
-       data: function($http){
+       info: function($http){
           return $http.get('/list')
           .then(function(response){
             return response.data;
@@ -181,12 +181,15 @@ $scope.addProducts1= function(product){
 
 
 
-   app.controller('listOfProducts', function($scope,suma,storeProduct,price,$rootScope,$http,data) {
+   app.controller('listOfProducts', function($scope,suma,storeProduct,price,$rootScope,$http,info) {
   
 
-    $scope.listProducts = data;
 
-   $scope.sum = price;
+    $scope.listProducts = info;
+
+   
+
+
 
 
   });

@@ -4,24 +4,24 @@
 <div ng-controller="OneProduct" class="infoAboutProduct">
 
 
-<div > <img class="infoAboutProductImage" width="200px;" src="{{oneProduct.image}}"> </div>
+<div class="PO1" > <img class="infoAboutProductImage" width="200px;" src="{{oneProduct.image}}"> </div>
 
-<div>
+<div >
        
     
-      <table class="infoAboutProductTable" style="border:3px solid blue;margin-top: 20%;border-radius: 25px ; background-color: #ffc02a" >
+      <table class="infoAboutProductTable" style="margin-top: 20%;border-radius: 25px ; background-color: #ffc02a" >
       
         <tr style="border:2px solid red">
-             <th style="border:2px solid black"> Name </th>
-             <th style="border:2px solid black"> {{oneProduct.name}}</th>
+             <th style="border:1px solid black; size: 10px; " > Name </th>
+             <th style="border:1px solid black"> {{oneProduct.name}}</th>
          </tr>
-         <tr style="border:2px solid red">
-            <th style="border:2px solid black"> Price </th>
-            <th style="border:2px solid black"> {{oneProduct.price}}</th>
+         <tr style="border:1px solid red">
+            <th style="border:1px solid black"> Price </th>
+            <th style="border:1px solid black"> {{oneProduct.price}}</th>
           </tr>
-          <tr style="border:2px solid red">
-            <th style="border:2px solid black"> Country </th>
-            <th style="border:2px solid black"> Lietuva</th>
+          <tr style="border:1px solid red">
+            <th style="border:1px solid black"> Country </th>
+            <th style="border:1px solid black"> Lietuva</th>
           </tr>
      </table>
 <button style="margin-top: 5%;" class="myButton1"  ng-click="addOne(); saveBuyProduct(oneProduct); addProducts1(oneProduct);"  > Buy  </button> 

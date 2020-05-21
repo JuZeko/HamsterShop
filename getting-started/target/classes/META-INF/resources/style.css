@@ -234,6 +234,9 @@ color: green;
         transition: transform 0.5s ease-in;
         align-items: center;
     }
+    .king {
+    display: none;
+}
   .infoAboutProduct {
     background-color: aliceblue;
     display: block;
